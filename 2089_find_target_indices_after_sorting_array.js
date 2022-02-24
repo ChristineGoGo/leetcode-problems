@@ -10,31 +10,6 @@ Return a list of the target indices of nums after sorting nums in non-decreasing
 
 /** 
  * @param {number[]} nums
- * @return {number[]}
- 
-*/
-// sorting function
-let sorted = function(nums) {
-    start = 0;
-    end = nums.length - 1;
-
-    while (start < end){
-        if (nums[start] > nums[end]) {
-            temp = nums[start];
-            nums[start] = nums[end];
-            nums[end] = temp;
-            end -= 1;
-        } else {
-            start += 1;
-        }
-    }
-
-    return nums
-};
-
-
-/** 
- * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
  
