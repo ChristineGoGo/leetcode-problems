@@ -47,11 +47,11 @@ var romanToInt = function(s) {
         if ( (s.length - i > 1) && conversions.get(s[i]) < conversions.get(s[i + 1])) {
             curr = conversions.get(s[i + 1]) - conversions.get(s[i]);
             total += curr;
-            i += 2;       
+            i += 2;
         } else {
             total += conversions.get(s[i]);
             i++;
-        } 
+        }
     }
     return total;
 
@@ -78,8 +78,7 @@ console.log(romanToInt("CXVII"));
 //                          total += 4;
 //                      } else {
 //                         total += 5;
-//                      }
-                
+//                      }              
 //                 console.log(total);
 //             }else if(char === 'X'){
 //                      if(s_arr[i - 1] === 'I'){
@@ -87,7 +86,7 @@ console.log(romanToInt("CXVII"));
 //                      } else {
 //                         total += 10;
 //                      }
-//                      console.log(total);         
+//                      console.log(total);
 //             }else if(char === 'L'){
 //                      if(s_arr[i - 1] === 'X'){
 //                          total += 40;
@@ -97,7 +96,7 @@ console.log(romanToInt("CXVII"));
 //                      if(s_arr[i - 1] === 'X'){
 //                          total += 90;
 //                      }else{total += 100;}
-//                      console.log(total);   
+//                      console.log(total);
 //             }else if(char === 'D'){
 //                      if(s_arr[i - 1] === 'C'){
 //                          total += 400;
@@ -108,7 +107,7 @@ console.log(romanToInt("CXVII"));
 //                          total += 900;
 //                      }else {total += 1000;}
 //                      console.log(total); 
-//             }        
+//             }
 //     }
 //     return total;
 // };
