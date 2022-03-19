@@ -13,8 +13,8 @@
 var Logger = function(){
     this.logger = new Object();
 }
-/** 
-* @param {number} timestamp 
+/**
+* @param {number} timestamp
 * @param {string} message
 * @return {boolean}
 */
