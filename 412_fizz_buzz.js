@@ -20,21 +20,61 @@
  * @param {number} n
  * @return {string[]}
  */
+// -----------------------------------------------------------------------------------------------------------
+// --------------------------------------- APPROACH 1 --------------------------------------------------------
+// let fizzBuzz = function(n) {
+//     let result = [];
+//     for(let i =1; i < n + 1 ; i++){
+//         if ((i % 3 === 0) && (i % 5 === 0 )){
+//             result.push("FizzBuzz");
+//         } else if (i % 3 === 0) {
+//             result.push("Fizz")
+//         } else if (i % 5 === 0) {
+//             result.push("Buzz");
+//         } else {
+//             result.push(i.toString());
+//         }
+//     }
+//     return result
+// };
 
-let fizzBuzz = function(n) {
-    let result = [];
-    for(let i =1; i < n + 1 ; i++){
-        if ((i % 3 === 0) && (i % 5 === 0 )){
-            result.push("FizzBuzz");
-        } else if (i % 3 === 0) {
-            result.push("Fizz")
-        } else if (i % 5 === 0) {
-            result.push("Buzz");
-        } else {
-            result.push(i.toString());
-        }
+// // -----------------------------------------------------------------------------------------------------------
+// // --------------------------------------- APPROACH 2 --------------------------------------------------------
+// var fizzBuzz = function(n) {
+//     let answer = [];
+//     for (let i = 1; i <= n; i++) {
+//         let divisible_by_3 = (i % 3 === 0);
+//         let divisible_by_5 = (i % 5 === 0);
+        
+//         let strRslt = "";
+        
+//         if (divisible_by_3) strRslt += "Fizz";
+//         if (divisible_by_5) strRslt += "Buzz";
+//         if (strRslt === "") strRslt += i.toString();
+        
+//         answer.push(strRslt);
+//     }
+//     return answer;
+// };
+
+// -----------------------------------------------------------------------------------------------------------
+// --------------------------------------- APPROACH 3 --------------------------------------------------------
+var fizzBuzz = function(n) {
+    let answer = [];
+    let map = new Map();
+    map.set(3, "Fizz");
+    map.set(5, "Buzz");
+
+    for (let i = 1; i <= n; i++) {
+        let strAns = "";
+        map.forEach((value, key) => { 
+            if (i % key === 0) strAns += value;
+        });
+
+        if (strAns === "") strAns += i.toString();
+
+        answer.push(strAns);
     }
-    return result
+    return answer;
 };
-
-console.log(fizzBuzz(1))
+console.log(fizzBuzz(15))
