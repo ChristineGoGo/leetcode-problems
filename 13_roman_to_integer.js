@@ -23,43 +23,83 @@
  * @return {number}
  */
 
-// optimal solution
-var romanToInt = function(s) {
-    //create a mapping
-    // I, V, X, L, C, D and M.
-    //Symbol Value I 1 V 5 // X 10 // L 50 // C 100 // D 500 // M 1000
-
-    const conversions = new Map();
-    conversions.set('I', 1);
-    conversions.set('V', 5);
-    conversions.set('X', 10);
-    conversions.set('L', 50);
-    conversions.set('C', 100);
-    conversions.set('D', 500);
-    conversions.set('M', 1000);
-
-    // declare total and i, total is where the total value is stored
-    let total = 0;
-    let i = 0;
-    while (i < s.length) {
-        // for each iteration compare the current character with the next
-        // add integer value to the total if next character is less than current
-        if ( (s.length - i > 1) && conversions.get(s[i]) < conversions.get(s[i + 1])) {
-            curr = conversions.get(s[i + 1]) - conversions.get(s[i]);
-            total += curr;
-            i += 2;
+// more optimal solution
+/**
+ * @param {string} s
+ * @return {number}
+ */
+ var romanToInt = function(s) {
+    const romans = new Map();
+    
+    romans.set('I', 1);
+    romans.set('IV', 4);
+    romans.set('V', 5);
+    romans.set('IX', 9);
+    romans.set('X', 10);
+    romans.set('XL', 40);
+    romans.set('L', 50);
+    romans.set('XC', 90);
+    romans.set('C', 100);
+    romans.set('CD', 400);
+    romans.set('D', 500);
+    romans.set('CM', 900);
+    romans.set('M', 1000);
+    
+    let integer = 0;
+    let i = s.length - 1;
+    
+    while ( i >= 0) {
+        if ((i >= 1) && (romans.get(s[i]) > romans.get(s[i - 1]))) {
+            integer += romans.get(s[i - 1] + s [i]);
+            i -= 2;
         } else {
-            total += conversions.get(s[i]);
-            i++;
+            integer += romans.get(s[i]);
+            i -= 1;
         }
     }
-    return total;
-
+    return integer;
 };
-
-// console.log(romanToInt("MCMXCIV"));
+console.log(romanToInt("MCMXCIV"));
 console.log(romanToInt("CXVII"));
-// console.log(romanToInt("MCMXCIV"));
+console.log(romanToInt("MMMCMXCIX"));
+
+// optimal solution
+// var romanToInt = function(s) {
+//     //create a mapping
+//     // I, V, X, L, C, D and M.
+//     //Symbol Value I 1 V 5 // X 10 // L 50 // C 100 // D 500 // M 1000
+
+//     const conversions = new Map();
+//     conversions.set('I', 1);
+//     conversions.set('V', 5);
+//     conversions.set('X', 10);
+//     conversions.set('L', 50);
+//     conversions.set('C', 100);
+//     conversions.set('D', 500);
+//     conversions.set('M', 1000);
+
+//     // declare total and i, total is where the total value is stored
+//     let total = 0;
+//     let i = 0;
+//     while (i < s.length) {
+//         // for each iteration compare the current character with the next
+//         // add integer value to the total if next character is less than current
+//         if ( (s.length - i > 1) && conversions.get(s[i]) < conversions.get(s[i + 1])) {
+//             curr = conversions.get(s[i + 1]) - conversions.get(s[i]);
+//             total += curr;
+//             i += 2;
+//         } else {
+//             total += conversions.get(s[i]);
+//             i++;
+//         }
+//     }
+//     return total;
+
+// };
+
+// // console.log(romanToInt("MCMXCIV"));
+// console.log(romanToInt("CXVII"));
+// // console.log(romanToInt("MCMXCIV"));
 
 // my OVER simplified solution
 // no need to create a new list we can just loop over the string
