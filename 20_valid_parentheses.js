@@ -1,5 +1,5 @@
 /**
- *  Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', 
+ *  Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
  *  determine if the input string is valid.An input string is valid if:
  *      Open brackets must be closed by the same type of brackets.
  *      Open brackets must be closed in the correct order.
@@ -15,7 +15,6 @@
 //     parenthesis.set("(", ")");
 //     parenthesis.set("{", "}");
 //     parenthesis.set("[", "]");
-    
 //      //loop over array matching the open brackets to closed ones
 //     let i = 0;
 //     while (i < t.length) {
@@ -23,7 +22,6 @@
 //         t.splice(i + 1, 1);
 //         i++;
 //         console.log(t);
-        
 //     }
 //     return true;
 // };
@@ -36,7 +34,6 @@
 //     parenthesis.set("(", ")");
 //     parenthesis.set("{", "}");
 //     parenthesis.set("[", "]");
-    
 //      //loop over array matching the open brackets to closed ones
 //     let i = 0;
 //     while (i < t.length) {
@@ -44,7 +41,6 @@
 //         t.splice(t.indexOf(parenthesis.get(t[i])), 1);
 //         i++;
 //         // console.log(t);
-        
 //     }
 //     return true;
 // };
@@ -57,7 +53,6 @@
 //     parenthesis.set("(", ")");
 //     parenthesis.set("{", "}");
 //     parenthesis.set("[", "]");
-    
 //      //loop over array matching the open brackets to closed ones
 //     let i = 0;
 //     while (i < t.length) {
@@ -72,12 +67,9 @@
 //         i++;
 //     console.log(`loop ${i}`);
 //     console.log(t);
-    
 // }
-
 // return true;
 // };
-
 
 //  ----------------------------- SOLUTION 3 JUST USING THE DANG STACK GAL!! ------------------------------------------------
 var isValid = function(s) {
@@ -86,10 +78,8 @@ var isValid = function(s) {
     parenthesis.set("(", ")");
     parenthesis.set("{", "}");
     parenthesis.set("[", "]");
-    
     //create a stack to store the opening brackets
     let stack = [];
-    
     for (let i = 0; i < s.length; i++) {
         if (parenthesis.get(s[i])) {
             // add opening brackets to the stack
@@ -102,9 +92,8 @@ var isValid = function(s) {
             } else {
                 return false;
             }
-        }       
+        }
     }
-    
     // console.log(stack);
     return stack.length === 0;
 };
