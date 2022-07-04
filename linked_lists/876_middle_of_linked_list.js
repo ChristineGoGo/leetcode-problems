@@ -16,8 +16,16 @@ class ListNode {
 
     constructor(val, next) {
         this.val = (val===undefined ? 0 : val);
-        this.next = (next===undefined ? 0 : next);
+        this.next = (next===undefined ? null : next);
     }
+}
+
+function printNodes(root) {
+    while (root.next !== null) {
+        console.log(root.val);
+        root = root.next;
+    }
+    console.log(root.val);
 }
 
 /**
@@ -36,4 +44,9 @@ let c = new ListNode(3);
 let d = new ListNode(4);
 let e = new ListNode(5);
 
-console.log(a);
+a.next = b;
+b.next = c;
+c.next = d;
+d.next  = e;
+
+console.log(printNodes(a));

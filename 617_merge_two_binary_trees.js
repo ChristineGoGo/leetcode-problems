@@ -1,8 +1,8 @@
 /**
  * You are given two binary trees root1 and root2.
- * Imagine that when you put one of them to cover the other, 
- * some nodes of the two trees are overlapped while the others are not. 
- * You need to merge the two trees into a new binary tree. The merge rule 
+ * Imagine that when you put one of them to cover the other,
+ * some nodes of the two trees are overlapped while the others are not.
+ * You need to merge the two trees into a new binary tree. The merge rule
  * is that if two nodes overlap, then sum node values up as the new value of the merged node.
  *  Otherwise, the NOT null node will be used as the node of the new tree.
  * Return the merged tree.
@@ -29,27 +29,24 @@
 var mergeTrees = function(root1, root2) {
     if (root1 === null ) return root2;
     let stack = [[root1, root2]];
-    
 
     while (stack.length > 0) {
         let curr = stack.pop();
-        
         if(curr[0] === null || curr[1] === null) continue;
-        
+
         curr[0].val += curr[1].val;
-                
+
         if (curr[0].left !== null ){
             stack.push([curr[0].left, curr[1].left])
         } else {
-            curr[0].left = curr[1].left;
+           curr[0].left = curr[1].left;
         }
-        
+
         if (curr[0].right !== null ){
-            stack.push([curr[0].right, curr[1].right])
+            stack.push([curr[0].right, curr[1].right]);
         } else {
             curr[0].right = curr[1].right;
         }
-        
     }
     return root1;
 };
@@ -66,7 +63,7 @@ function TreeNode(val, left, right) {
 //        /   \
 //      3      2
 //    /  \    /  \
-//   5     
+//   5
 const a = new TreeNode(1);
 const b = new TreeNode(3);
 const c = new TreeNode(2);
@@ -81,7 +78,7 @@ b.left = d;
 //        /   \
 //      1      3
 //    /  \    /  \
-//        4       7     
+//        4       7
 const A = new TreeNode(2);
 const B = new TreeNode(1);
 const C = new TreeNode(3);
