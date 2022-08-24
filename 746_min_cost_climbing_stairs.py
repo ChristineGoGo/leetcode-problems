@@ -7,14 +7,14 @@
 """
 def minCostClimbingStairs(cost):
     res = [0 for i in range(len(cost) + 1)]
-    
+
     for i in range(len(cost) - 1,-1, -1):
         # print(i)
         if i >= len(cost) - 2:
             res[i] = cost[i]
         else:
             res[i] = cost[i] + min(res[i + 1], res[i + 2])
-    
+
     # print(res)
     return min(res[0], res[1])
 
