@@ -3,7 +3,7 @@
     The digits are stored in reverse order, and each of their nodes contains a single
     digit. Add the two numbers and return the sum as a linked list.
 
-    You may assume the two numbers do not contain any leading zero, except the number 
+    You may assume the two numbers do not contain any leading zero, except the number
     0 itself.
 """
 class ListNode:
@@ -23,17 +23,17 @@ class ListNode:
 #             total = l2.val
 #         else:
 #             total = (l1.val + l2.val)
-            
+
 #         to_add = total if total < 10 else total - 10
 #         c.next = ListNode(to_add)
 #         rem = total // 10 if total >= 10 else 0
 
 #         if rem >= 1:
-#             if l1 and l1.next: 
+#             if l1 and l1.next:
 #                 l1.next.val += rem
-#             elif l2 and l2.next: 
+#             elif l2 and l2.next:
 #                 l2.next.val += rem
-                
+
 #         curr_total = to_add
 #         # print(f"curr_total: {curr_total}")
 #         l1 = None if not l1 else l1.next
@@ -51,9 +51,9 @@ def addTwoNumbers(l1, l2):
     while l1 != None or l2 != None:
         x = 0 if not l1 else l1.val
         y = 0 if not l2 else l2.val
-        total = x + y + rem   
+        total = x + y + rem
         to_add = total % 10
-        
+
         c.next = ListNode(to_add)
         rem = total // 10
 
@@ -62,17 +62,17 @@ def addTwoNumbers(l1, l2):
         c = c.next
     if rem >= 1: c.next = ListNode(rem)
     return head.next
-    
-   
-        
-        
+
+
+
+
 
 def createNodes(l, head=ListNode()):
     c = head
     for i in range(len(l)):
         c.next= ListNode(l[i])
         c = c.next
-        
+
     return head.next.val
 
 def loopNodes(head):
