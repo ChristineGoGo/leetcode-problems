@@ -1,18 +1,12 @@
-def reverse(x):
-    MIN_NUM = -2147483648
-    MAX_NUM = 2147483648
-    res = 0
-    while x:
-        digit = int(math.fmod(-x, 10))
-        x = int(x / 10)
-        # check to make sure that the number does not overflow
-        if (res > MAX_NUM // 10 or
-                res == MAX_NUM // 10 and digit >= MAX_NUM % 10):
+class Solution:
+    def reverse(self, x: int) -> int:
+        n_x = str(x)
+        res = ''
+        for i in range(len(n_x)- 1, -1, -1):
+            res += n_x[i]
+        res = res.removesuffix('-')
+        res = int(res) if x > 0 else int(res) * -1
+        if -2147483648 < res < 2147483647:
+            return res
+        else:
             return 0
-
-
-if __name__ == '__main__':
-    assert (reverse(123) == 321)
-    assert (reverse(-123) == -321)
-    assert (reverse(120) == 21)
-    assert (reverse(0) == 0)
