@@ -35,3 +35,27 @@ Explanation: Since there are only 2 candies, we buy both of them. There is not a
 Hence, the minimum cost to buy all candies is 5 + 5 = 10.
 
 =end
+
+=begin
+APPROACH: Avoid adding the items in every third index to the total sum
+=end
+
+def minimum_cost(cost)
+
+    sorted_cost = cost.sort.reverse
+    total_cost = 0
+    
+    sorted_cost.each_with_index do |price, index|
+        next if index % 3 == 2 #skip for every 3rd candy
+        total_cost += price
+    end
+    
+    return total_cost
+
+end
+
+
+
+
+
+
