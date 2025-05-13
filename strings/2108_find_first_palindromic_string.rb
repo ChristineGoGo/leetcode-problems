@@ -40,10 +40,10 @@ words[i] consists only of lowercase English letters.
 
 # @param {String[]} words
 # @return {String}
-def isPalindrome(word)
+def is_palindrome(word)
     r = word.length - 1
     l = 0
-    while l >= r
+    while l <= r
         if !word[r].eql?(word[l])
             return false
         end
@@ -56,9 +56,13 @@ end
 
 def first_palindrome(words)
     words.each { |word|
-        if isPalindrome(word) == true
+        if is_palindrome(word) == true
             return word
         end
     }
     return ""
 end
+
+
+words = ["abc","car","ada","racecar","cool"]
+puts first_palindrome(words)
