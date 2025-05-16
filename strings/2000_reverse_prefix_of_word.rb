@@ -41,6 +41,35 @@ given string
 # @param {String} word
 # @param {Character} ch
 # @return {String}
-def reverse_prefix(word, ch)
-    
+def reverse_word(word)
+    n = word.length
+    l = 0
+    r = n - 1
+
+    while l <= r
+        temp = word[l]
+        word[l] = word[r]
+        word[r] = temp
+        l += 1
+        r -= 1
+    end
+
+    return word
 end
+def reverse_prefix(word, ch)
+    index = 0
+    current_index = 0
+    n = word.length
+
+    n.times do |i|
+        if word[i].eql?(ch)
+            index = current_index
+            break
+        end
+        current_index += 1
+    end
+    return index == 0 ? word : reverse_word(word[0, index + 1]) + word[index + 1, n]
+end
+
+puts reverse_prefix("abcd", "z")
+
