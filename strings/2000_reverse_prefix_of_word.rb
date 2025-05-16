@@ -37,3 +37,10 @@ substring(0 - index) until the end of the string(index + 1 to n) n is the length
 given string
 =end
 
+
+# @param {String} word
+# @param {Character} ch
+# @return {String}
+def reverse_prefix(word, ch)
+    
+end
