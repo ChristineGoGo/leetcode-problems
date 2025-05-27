@@ -21,5 +21,32 @@
 
  /*
   * APPROACH: Add all the numbers in the odd position of the given digit
-  * while subtracting the numbers in the even positions
+  * while subtracting the numbers in the even position.
   */
+
+  public class alternatingDigitSum_2544 {
+    public static int alternatingDigitSum(int n) {
+        int total = 0;
+        int num = n;
+        int current;
+        int position = String.valueOf(num).length() % 2 == 0 ? 2 : 1;
+
+        while (num > 0) {
+
+            current = num % 10;
+            if (position % 2 == 0) {
+                total -= current;
+            } else {
+                total += current;
+            }
+            num /= 10;
+            position += 1;
+        }
+        return total;
+    }
+
+    public static void main(String[] args) {
+        int result = alternatingDigitSum(10);
+        System.out.println(result);
+    }
+  }
