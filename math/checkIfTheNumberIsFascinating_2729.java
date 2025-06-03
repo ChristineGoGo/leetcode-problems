@@ -33,6 +33,7 @@ public class checkIfTheNumberIsFascinating_2729 {
     public static boolean isFascinating(int n) {
         String concatinated = Integer.toString(n) + Integer.toString(n*2) + Integer.toString(n * 3);
 
+        @SuppressWarnings("UnnecessaryTemporaryOnConversionFromString")
         Long formedNumber = Long.parseLong(concatinated);
         Map<Integer, Integer> numberFrequency = new HashMap<>();
         
