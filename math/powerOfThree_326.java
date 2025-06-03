@@ -8,7 +8,7 @@ public class powerOfThree_326 {
             }
             num /= 3;
         }
-        return num == 1 ? true : false;
+        return num == 1;
     }
 
 
