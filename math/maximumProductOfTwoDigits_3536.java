@@ -43,7 +43,7 @@ Explanation:
 The digits of n are [1, 2, 4].
 The possible products of any two digits are: 1 * 2 = 2, 1 * 4 = 4, 2 * 4 = 8.
 The maximum product is 8.
- 
+
 
 Constraints:
 
@@ -78,5 +78,4 @@ public class maximumProductOfTwoDigits_3536 {
         int test1 = 99999999;
         System.out.println(maxProduct(test1));
     }
-    
 }
