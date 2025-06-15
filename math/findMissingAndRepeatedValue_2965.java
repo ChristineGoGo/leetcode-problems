@@ -29,11 +29,9 @@ For all x that 1 <= x <= n * n except two of them there is exactly one pair of i
  */
 
 /*
- * APPROACH: create an array that stores the repeated and missing number.
- * create a variable to store the maximum range number, which is the length
- * of the given matrix squared.
- * Loop through each number in the matrix and add each number to an array, sort the array. 
- * Loop through the array to find the missing number and duplicated number
+ * APPROACH: use a hashmap to store each value and their frequency
+ * loop through the keys to find the number with a frequency count of 2
+ * and the number that doesn't exist in the range 
  */
 public class findMissingAndRepeatedValue_2965 {
     public static int[] findMissingAndRepeatedValues(int[][] grid) {
