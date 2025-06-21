@@ -8,7 +8,7 @@ Return the maximum product of any two digits in n.
 
 Note: You may use the same digit twice if it appears more than once in n.
 
- 
+
 
 Example 1:
 
