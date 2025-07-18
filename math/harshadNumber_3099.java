@@ -3,7 +3,7 @@
     You are given an integer x. Return the sum of the digits of x if x is a Harshad number,
     otherwise, return -1.
 
-    
+
 
     Example 1:
 
@@ -25,7 +25,7 @@
 
     The sum of digits of x is 5. 23 is not divisible by 5. So 23 is not a Harshad number and the answer is -1.
 
-    
+
 
     Constraints:
 
@@ -55,5 +55,5 @@ public class harshadNumber_3099 {
         System.out.println(sumOfTheDigitsOfHarshadNumber(18));
 
     }
-    
+
 }
