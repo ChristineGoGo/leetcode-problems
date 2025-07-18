@@ -1,11 +1,11 @@
 /*
-    You are given an integer array nums containing positive integers. 
-    We define a function encrypt such that encrypt(x) replaces every digit 
+    You are given an integer array nums containing positive integers.
+    We define a function encrypt such that encrypt(x) replaces every digit
     in x with the largest digit in x. For example, encrypt(523) = 555 and encrypt(213) = 333.
 
     Return the sum of encrypted elements.
 
-    
+
 
     Example 1:
 
@@ -23,7 +23,7 @@
 
     Explanation: The encrypted elements are [11,22,33]. The sum of encrypted elements is 11 + 22 + 33 == 66.
 
-    
+
 
     Constraints:
 
@@ -60,7 +60,7 @@ public class findTheSumOfEncryptedIntegers_3079 {
         int total = 0;
 
         for (int i = 0; i < nums.length; i++) {
-            res[i] = encrypt(nums[i]); 
+            res[i] = encrypt(nums[i]);
         }
 
         for (int i = 0; i < res.length; i++) {
@@ -72,7 +72,7 @@ public class findTheSumOfEncryptedIntegers_3079 {
     public static void main(String[] args) {
         int[] test = {10, 21, 31};
         System.out.println(sumOfEncryptedInt(test));
-        
+
     }
-    
+
 }
