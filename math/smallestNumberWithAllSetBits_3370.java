@@ -2,7 +2,7 @@
 
     You are given a positive number n.
 
-    Return the smallest number x greater than or equal to n, 
+    Return the smallest number x greater than or equal to n,
     such that the binary representation of x contains only set bits
 
     Example 1:
@@ -35,7 +35,7 @@
 
     The binary representation of 3 is "11".
 
-    
+
 
     Constraints:
 
@@ -78,8 +78,8 @@ public class smallestNumberWithAllSetBits_3370 {
                 String curr = currBit.charAt(i) + "";
                 if (!curr.equals("1")) {
                     allOnes = false;
-                    
-                } 
+
+                }
                 tracker++;
             }
             // System.out.println(tracker);
@@ -91,5 +91,5 @@ public class smallestNumberWithAllSetBits_3370 {
         }
         return num;
     }
-    
+
 }
