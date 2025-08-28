@@ -31,34 +31,7 @@ APPROACH: Figure out who arrives last and then figure out who leaves first
 the result is the difference between the two, create a list to store the number of days in each month of the year
 */
 
-# @param {String} arrive_alice
-# @param {String} leave_alice
-# @param {String} arrive_bob
-# @param {String} leave_bob
-# @return {Integer}
-def count_days_together(arrive_alice, leave_alice, arrive_bob, leave_bob)
-    possible_days_together = false
-    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    days_together = 0
-    arrive_last = 0
-    leave_first = 0
 
-    # who arrives first
-    alice_arrival_month = arrive_alice[0,2]
-    bob_arrival_month = arrive_bob[0, 2]
-    #check that Alice's arrival is before or same as Bob's
-    if alice_arrival_month <= bob_arrival_month && alice_arrival_day <= bob_arrival_day
-        possible_days_together == true
-    end
-
-    #calculate the number of days spent together
-     days_together += (month_days[alice_arrival_month] - month_days[bob_arrival_month])
-     days_together += (alice_arrival_day - bob_arrival_day)
-
-    # return the total days spent together
-    return days_together
-    
-end
 
 
 
