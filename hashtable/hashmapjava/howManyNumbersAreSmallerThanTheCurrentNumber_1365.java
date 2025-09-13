@@ -10,12 +10,9 @@ public class howManyNumbersAreSmallerThanTheCurrentNumber_1365 {
         for (int i = 0; i < nums.length; i++) {
             int curr  = 0;
             for (int j = 0; j < nums.length; j++) {  
-                if (nums[i] == nums[j]) {
-                    continue;
-                } else {
-                    if(nums[j] < nums[i]) {
+                if(nums[j] < nums[i]) {
                         curr++;
-                    }
+ 
                 }
             }
             result[i] = curr;
