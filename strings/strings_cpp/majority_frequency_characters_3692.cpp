@@ -69,8 +69,7 @@
 #include <map>
 
 using namespace std;
-// APPROACH: Use an array to store the frequency of each character
-// in the alphabet. Find the frequency with the highest group size.
+
 // APPROACH: Use 2 maps to store the frequency of each character
 // and the frequency with the highest group size
 
