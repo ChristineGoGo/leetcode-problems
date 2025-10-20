@@ -32,6 +32,8 @@
 
 */
 #include <iostream>
+#include <map>
+
 using namespace std;
 // APPROACH: Find the frequencies of each number in 
 // nums. Sort according to the increasing frequencies using a
