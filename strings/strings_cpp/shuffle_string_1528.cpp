@@ -6,7 +6,7 @@
 
     Return the shuffled string.
 
- 
+
 
     Example 1:
     Input: s = "codeleet", indices = [4,5,6,7,0,2,1,3]
@@ -17,7 +17,7 @@
     Input: s = "abc", indices = [0,1,2]
     Output: "abc"
     Explanation: After shuffling, each character remains in its position.
- 
+
 
     Constraints:
 
@@ -46,12 +46,8 @@ string restoreString(string s, vector<int>& indices) {
     }
 
     return res;
-    
 }
 
-int main() {
-    
-}
 
 
 
