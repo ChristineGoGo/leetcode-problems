@@ -1,6 +1,6 @@
 /*
 
-    You are given a string s of even length. Split this string into 
+    You are given a string s of even length. Split this string into
     two halves of equal lengths, and let a be the first half and b be the second half.
 
     Two strings are alike if they have the same number of vowels
@@ -9,13 +9,12 @@
 
     Return true if a and b are alike. Otherwise, return false.
 
-    
 
     Example 1:
 
     Input: s = "book"
     Output: true
-    Explanation: a = "bo" and b = "ok". a has 1 vowel and b has 1 vowel. 
+    Explanation: a = "bo" and b = "ok". a has 1 vowel and b has 1 vowel.
     Therefore, they are alike.
     Example 2:
 
@@ -24,7 +23,7 @@
     Explanation: a = "text" and b = "book". a has 1 vowel whereas b has 2.
     Therefore, they are not alike.
     Notice that the vowel o is counted twice.
-    
+
 
     Constraints:
 
@@ -39,7 +38,7 @@
 // populate the hashmaps with the vowels that are to be stored
 // / in a vector.
 // loop from 0 - n /2 (n being the length of s)
-//  - each time a vowel is encountered add to total vowels 
+//  - each time a vowel is encountered add to total vowels
 //  - perform the same for the second part
 // return if the vowels count is the same
 
@@ -55,7 +54,7 @@ bool halvesAreAlike(string s) {
     }
 
     int ca = 0, cb = 0, n = s.length();
-    
+
     for (int i = 0; i < n; i++) {
         if (i < (n / 2)) {
             if ( ma[s[i]] > 0){
@@ -71,7 +70,7 @@ bool halvesAreAlike(string s) {
     }
 
     return ca == cb;
-    
+
 }
 
 
