@@ -35,7 +35,7 @@ using namespace std;
 
 // APPROACH: Hashmap. dominoes[i] is equivalent to dominoes[j]
 // if dominoes[j] is equal to dominoes[i] or dominoes[j] is dominoes[i]
-// flipped.So basically, we can utilize sorting to find the equivalent 
+// flipped.So basically, we can utilize sorting to find the equivalent
 // dominoes for each entry.
 // loop for each item in dominoes, find the smallest item, add to string
 // find the biggest item, add to string. Add to the total pairs if the item
@@ -57,7 +57,7 @@ int numEquivDominoPairs(vector<vector<int>>& dominoes) {
     }
 
     return totPairs;
-    
+
 }
 
 
