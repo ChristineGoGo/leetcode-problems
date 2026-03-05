@@ -53,7 +53,6 @@ int arithmeticTriplets(vector<int>& nums, int diff) {
 
     return res;
 
-    
 }
 
 
