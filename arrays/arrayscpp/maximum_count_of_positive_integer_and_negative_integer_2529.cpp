@@ -38,34 +38,58 @@
     Follow up: Can you solve the problem in O(log(n)) time complexity?
 
 */
+#include <iostream>
+#include <vector>
 
-// APPROACH: Create two functions to find the first 0 or positive
+using namespace std;
+
+// APPROACH: Binary search. Create two functions to find the first 0 or positive
 // this function is used to find the number of negative values to left of index(lowerBound)
 // Second function is used to find the first positive this is used to find
 // the number of positive values which will be to the right of the index(upperBound)
 // return the max of the two values
+
+// This function finds the index of the first 0 or positive
 int lowerBound(vector<int> nums) {
-    int n = nums.size();
-    for (int i = 0; i < n; i++) {
-        if (nums[i] == 0 || nums[i] > 0) {
-            return i;
+    int n = nums.size(); int idx = n;
+    int start = 0; int end = n - 1; int curr;
+    while (start <= end) {
+        curr = (start + end ) / 2;
+        if (nums[curr] == 0 || nums[curr] > 0) {
+            end = curr - 1;
+            idx = curr;
+        } else if (nums[curr] < 0) {
+            start = curr + 1;
         }
     }
-    return n;
+
+    return idx;
 }
 
 int upperBound(vector<int> nums) {
-    int n = nums.size();
-    for (int i = 0; i < n; i++) {
-        if (nums[i] > 0) {
-            return n - i;
+    int n = nums.size(); int idx = n;
+    int start = 0; int end = n - 1; int curr;
+    while (start <= end) {
+        curr = (start + end) / 2;
+        if (nums[curr] > 0 ) {
+            end = curr - 1;
+            idx = curr;
+        } else {
+            start = curr + 1;
         }
     }
-    return 0;
+    return n - idx;
 
 }
 int maximumCount(vector<int>& nums) {
     if (nums.size() == 1 && nums[0] != 0) return 1;
+    cout << lowerBound(nums);
+    cout << upperBound(nums);
     return max(lowerBound(nums), upperBound(nums));
 }
 
+int main() {
+    vector<int> nums = {5};
+    cout << maximumCount(nums);
+    return 0;
+}
