@@ -1,0 +1,68 @@
+/*
+
+    You are given a string array words and a string s, where words[i] and s
+    comprise only of lowercase English letters.
+
+    Return the number of strings in words that are a prefix of s.
+
+    A prefix of a string is a substring that occurs at the beginning of the string.
+    A substring is a contiguous sequence of characters within a string.
+
+
+    Example 1:
+
+    Input: words = ["a","b","c","ab","bc","abc"], s = "abc"
+    Output: 3
+    Explanation:
+    The strings in words which are a prefix of s = "abc" are:
+    "a", "ab", and "abc".
+    Thus the number of strings in words which are a prefix of s is 3.
+
+    Example 2:
+
+    Input: words = ["a","a"], s = "aa"
+    Output: 2
+    Explanation:
+    Both of the strings are a prefix of s. 
+    Note that the same string can occur multiple times in words, and it should be counted each time.
+
+    Constraints:
+
+    1 <= words.length <= 1000
+    1 <= words[i].length, s.length <= 10
+    words[i] and s consist of lowercase English letters only.
+*/
+
+// APPROACH: Find all the prefixes in s and add them to an array
+//           - Loop with two pointers 00, 01, 02...... 0n(n is length of s)
+// Create map to store the words in words arrays that are prefixes in s
+// Loop for each prefix in s to locate it in words. Add to map/ add to total count
+// Return the total count
+int countPrefixes(vector<string>& words, string s) {
+    vector<string> prefixes;
+    int n = s.size(); int totalCount = 0;
+    int start = 0; int end = n;
+
+    for (int i = 0; i < 1; i++) {
+        string currentWord = "";
+        for (int j = i; j < n; j++ ) {
+            currentWord += s[j];
+            prefixes.push_back(currentWord);
+        }
+        
+        
+    }
+
+    for (string prefix: prefixes) {
+        for (string word: words) {
+            if (word == prefix) totalCount++;
+        }
+    }
+
+    return totalCount;
+}
+
+
+
+
+
