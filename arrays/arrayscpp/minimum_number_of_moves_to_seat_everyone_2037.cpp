@@ -55,7 +55,8 @@
 
 */
 
-// APPROACH: declare variable to store the moves needed
+// APPROACH: Use greedy method to find the optimal seat
+// declare variable to store the moves needed
 // Sort seats and students in ascending order
 // Loop for each sudents subtracting the absolute value
 // and adding to the totalMoves
