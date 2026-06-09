@@ -20,7 +20,7 @@
         Output: false
         Explanation:
         The diagonal "[1, 2]" has different elements.
- 
+
 
     Constraints:
 
@@ -28,7 +28,7 @@
         n == matrix[i].length
         1 <= m, n <= 20
         0 <= matrix[i][j] <= 99
-    
+
 
     Follow up:
         What if the matrix is stored on disk, and the memory is limited such that you can only load at most one row of the matrix into the memory at once?
